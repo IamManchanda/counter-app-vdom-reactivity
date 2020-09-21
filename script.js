@@ -1,5 +1,5 @@
 /**
- * Basic Virtual DOM Implementation
+ * Basic Vue 3 like Virtual DOM Implementation
  */
 
 const h = (tag, props, children) => ({ tag, props, children });
@@ -26,6 +26,6 @@ const mount = (vnode, container) => {
   container.appendChild(el);
 };
 
-const vdom = h("div", { class: "red" }, [h("span", null, "hello")]);
+const vdom = h("div", { class: "red" }, [h("span", null, "Hello World")]);
 
 mount(vdom, document.getElementById("app"));
