@@ -4,7 +4,7 @@
 
 const h = (tag, props, children) => ({ tag, props, children });
 
-function mount(vnode, container) {
+const mount = (vnode, container) => {
   const el = (vnode.el = document.createElement(vnode.tag));
 
   if (vnode.props) {
@@ -26,15 +26,9 @@ function mount(vnode, container) {
     }
   }
   container.appendChild(el);
-}
+};
 
-const vdom = h("div", { class: "blue" }, [
-  h("p", null, "Hello Earth World, this Virtual DOM is cool as blue here!"),
-]);
-
-mount(vdom, document.getElementById("app"));
-
-function patch(n1, n2) {
+const patch = (n1, n2) => {
   if (n1.tag === n2.tag) {
     const el = n1.el;
     const oldProps = n1.props || {};
@@ -91,7 +85,11 @@ function patch(n1, n2) {
     }
   } else {
   }
-}
+};
+
+const vdom = h("div", { class: "blue" }, [
+  h("p", null, "Hello Earth World, this Virtual DOM is cool as blue here!"),
+]);
 
 const vdom2 = h("div", { class: "red" }, [
   h("p", null, "Hello Mars World, this Virtual DOM is hot as red here!"),
