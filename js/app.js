@@ -3,6 +3,19 @@ const CounterApp = {
     count: 0,
   }),
   render() {
+    /*
+      <template>
+        <div>
+          <div class="button-container">
+            <div class="btn btn-success btn-lg" @click="...logic">Add item</div>
+            <div class="btn btn-danger btn-lg" :class="...logic" @click="...logic">
+              Remove item
+            </div>
+          </div>
+          <h4>Current Count: {...logic}</h4>
+        </div>
+      </template>
+    */
     return h("div", null, [
       h("div", { class: "button-container" }, [
         h(
@@ -11,7 +24,7 @@ const CounterApp = {
             class: "btn btn-success btn-lg",
             onClick: () => (this.data.count += 1),
           },
-          `Add item`,
+          "Add item",
         ),
         h(
           "button",
@@ -21,7 +34,7 @@ const CounterApp = {
             }`,
             onClick: () => this.data.count > 0 && (this.data.count -= 1),
           },
-          `Remove item`,
+          "Remove item",
         ),
       ]),
       h("h4", null, `Current Count: ${this.data.count}`),
