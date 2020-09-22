@@ -37,7 +37,8 @@ const CounterApp = {
           "Decrement",
         ),
       ]),
-      h("h4", null, `Current Count: ${this.data.count}.`),
+      h("hr", null, []),
+      h("h4", null, `Current Count: ${this.data.count}`),
     ]);
   },
 };
