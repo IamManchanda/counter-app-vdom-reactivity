@@ -5,11 +5,3 @@
 .red {
   color: red;
 }
-
-#planet-earth {
-  display: block;
-}
-
-#planet-mars {
-  display: none;
-}

@@ -9,13 +9,22 @@
 </head>
 
 <body>
-  <p id="planet-earth"><button onclick="visitMars()">Click me</button> to visit mars</p>
-  <p id="planet-mars">Thanks for visiting mars</p>
+  <p id="planet-earth" style="display: block;">
+    <button onclick="visitMars()">Click me</button> to visit mars
+  </p>
+  <p id="planet-mars" style="display: none;">
+    Thanks for visiting mars
+  </p>
+
   <div id="app"></div>
+
   <script src="script.js"></script>
   <script>
     function visitMars() {
+      // Virtual DOM Manipulation
       patch(vdom, vdom2);
+
+      // Real DOM Manipulation
       document.getElementById("planet-earth").style.display = "none";
       document.getElementById("planet-mars").style.display = "block";
     }
