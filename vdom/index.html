@@ -18,17 +18,8 @@
 
   <div id="app"></div>
 
+  <script src="vdom.js"></script>
   <script src="script.js"></script>
-  <script>
-    function visitMars() {
-      // Virtual DOM Manipulation
-      patch(vdom, vdom2);
-
-      // Real DOM Manipulation
-      document.getElementById("planet-earth").style.display = "none";
-      document.getElementById("planet-mars").style.display = "block";
-    }
-  </script>
 
 </body>
 
