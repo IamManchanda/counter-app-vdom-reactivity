@@ -11,7 +11,11 @@ const mount = (vnode, container) => {
     for (const key in vnode.props) {
       if (vnode.props.hasOwnProperty(key)) {
         const value = vnode.props[key];
-        el.setAttribute(key, value);
+        if (key.startsWith("on")) {
+          el.addEventListener(key.slice(2).toLowerCase(), value);
+        } else {
+          el.setAttribute(key, value);
+        }
       }
     }
   }
@@ -30,7 +34,7 @@ const mount = (vnode, container) => {
 
 const patch = (n1, n2) => {
   if (n1.tag === n2.tag) {
-    const el = n1.el;
+    const el = (n2.el = n1.el);
     const oldProps = n1.props || {};
     const newProps = n2.props || {};
 
