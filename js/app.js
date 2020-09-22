@@ -7,9 +7,9 @@ const CounterApp = {
       <template>
         <div>
           <div class="button-container">
-            <button class="btn btn-success btn-lg" @click="...logic">Add item</button>
+            <button class="btn btn-success btn-lg" @click="...logic">Increment</button>
             <button class="btn btn-danger btn-lg" :class="...logic" @click="...logic">
-              Remove item
+              Decrement
             </button>
           </div>
           <h4>Current Count: {...logic}</h4>
@@ -24,7 +24,7 @@ const CounterApp = {
             class: "btn btn-success btn-lg",
             onClick: () => (this.data.count += 1),
           },
-          "Add item",
+          "Increment",
         ),
         h(
           "button",
@@ -34,10 +34,10 @@ const CounterApp = {
             }`,
             onClick: () => this.data.count > 0 && (this.data.count -= 1),
           },
-          "Remove item",
+          "Decrement",
         ),
       ]),
-      h("h4", null, `Current Count: ${this.data.count}`),
+      h("h4", null, `Current Count: ${this.data.count}.`),
     ]);
   },
 };
