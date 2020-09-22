@@ -7,10 +7,10 @@ const CounterApp = {
       <template>
         <div>
           <div class="button-container">
-            <div class="btn btn-success btn-lg" @click="...logic">Add item</div>
-            <div class="btn btn-danger btn-lg" :class="...logic" @click="...logic">
+            <button class="btn btn-success btn-lg" @click="...logic">Add item</button>
+            <button class="btn btn-danger btn-lg" :class="...logic" @click="...logic">
               Remove item
-            </div>
+            </button>
           </div>
           <h4>Current Count: {...logic}</h4>
         </div>
