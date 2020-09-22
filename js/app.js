@@ -4,10 +4,11 @@ const CounterApp = {
   }),
   render() {
     return h("div", null, [
-      h("p", { class: "button-group" }, [
+      h("div", { class: "button-container" }, [
         h(
           "button",
           {
+            class: "btn btn-success btn-lg",
             onClick: () => (this.data.count += 1),
           },
           `Add item`,
@@ -15,12 +16,13 @@ const CounterApp = {
         h(
           "button",
           {
+            class: "btn btn-danger btn-lg",
             onClick: () => this.data.count > 0 && (this.data.count -= 1),
           },
           `Remove item`,
         ),
       ]),
-      h("p", null, `Current Count: ${this.data.count}`),
+      h("h4", null, `Current Count: ${this.data.count}`),
     ]);
   },
 };
