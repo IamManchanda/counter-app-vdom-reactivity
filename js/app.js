@@ -16,7 +16,9 @@ const CounterApp = {
         h(
           "button",
           {
-            class: "btn btn-danger btn-lg",
+            class: `btn btn-danger btn-lg ${
+              this.data.count <= 0 ? "disabled" : ""
+            }`,
             onClick: () => this.data.count > 0 && (this.data.count -= 1),
           },
           `Remove item`,
